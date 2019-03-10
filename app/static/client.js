@@ -1,4 +1,6 @@
 var el = x => document.getElementById(x);
+var prediction_api_path = '/analyze';
+var api_response_key_name = 'result';
 
 function showPicker(inputId) { el('file-input').click(); }
 
@@ -19,12 +21,12 @@ function analyze() {
     el('analyze-button').innerHTML = 'Analyzing...';
     var xhr = new XMLHttpRequest();
     var loc = window.location
-    xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}/analyze`, true);
+    xhr.open('POST', `${loc.protocol}//${loc.hostname}:${loc.port}${prediction_api_path}`, true);
     xhr.onerror = function() {alert (xhr.responseText);}
     xhr.onload = function(e) {
         if (this.readyState === 4) {
             var response = JSON.parse(e.target.responseText);
-            el('result-label').innerHTML = `Result = ${response['result']}`;
+            el('result-label').innerHTML = `${response[api_response_key_name]}`;
         }
         el('analyze-button').innerHTML = 'Analyze';
     }
