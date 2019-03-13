@@ -6,13 +6,22 @@ The sample app described here is up at https://fastai-v3.onrender.com. Test it o
 
 The guide for production deployment to Render is at https://course.fast.ai/deployment_render.html.
 
-Heavily modified in order to convert it into a template starter project.
+## Refactored Project Template
 
-By default it deploys a _Pet Breed Image Classifier_ based on __Lesson 1__ of __Practical Deep Learning for Coders V3__ from the [fast.ai](https://course.fast.ai) using Resnet50 (stage-2 with
-a learning rate optimization after 3 epochs)
+Heavily modified in order to convert it into a project template for faster deployment of simple image classification projects
+
+## Updated Demo Site
+
+By default it deploys a _Pet Breed Image Classifier_ based on __Lesson 1__ of __Practical Deep Learning for Coders V3__ from the [fast.ai](https://course.fast.ai) course using Resnet50 (stage-2 with the learning rate optimized and run for 3 epochs). Here is the [site](http://pet-breed-classifier-fastai-demo.onrender.com)
 
 ## Modifying the template
 
-See __config.py__ and __petbreed_prediction_handler.py__. You can upload your own image learner model into google drive or dropbox and the app can download the model into your cloud deployment platform. Your custom prediction handler can convert the prediction responses from your model into json objects that your api will return to the client web app. You can also turn off the web page if you just want to serve an api endpoint that processes an image and returns your custom response (as a json object).
+See __config.py__ and __petbreed_prediction_handler.py__. 
+
+You can upload your own image learner model into google drive or dropbox and the app can download the model into your cloud deployment platform.
+
+Your custom prediction handler can convert the prediction responses from your model into json objects that your api will return to the client web app. 
+
+You can also turn off the web page if you just want to serve an api endpoint that processes an image and returns your custom response (as a json object).
 
 
