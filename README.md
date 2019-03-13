@@ -24,4 +24,19 @@ Your custom prediction handler can convert the prediction responses from your mo
 
 You can also turn off the web page if you just want to serve an api endpoint that processes an image and returns your custom response (as a json object).
 
+## Accessing the prediction analyzer endpoint
+
+You can also use the app solely as a prediction api provider without providing a default index html page.
+
+Simply set the `enable_index_page` setting in `config.py` to __False__
+
+You can access the api endpoint (using default settings) using the following curl command
+```
+curl -F "file=@/path/to/your/image/file" <your-url-here>/analyze
+```
+For example:
+```
+curl -F "file=@/home/butch/mycute-cat.jpg" localhost:5042/analyze
+```
+
 
