@@ -12,7 +12,7 @@ Heavily modified in order to convert it into a project template for faster deplo
 
 ## Updated Demo Site
 
-By default it deploys a _Pet Breed Image Classifier_ based on __Lesson 1__ of __Practical Deep Learning for Coders V3__ from the [fast.ai](https://course.fast.ai) course using Resnet50 (stage-2 with the learning rate optimized and run for 3 epochs). Here is the [site](http://pet-breed-classifier-fastai-demo.onrender.com)
+By default it deploys a _Pet Breed Image Classifier_ based on __Lesson 1__ of __Practical Deep Learning for Coders V3__ from the [fast.ai](https://course.fast.ai) course using a Resnet50 shared over Google Drive
 
 ## Modifying the template
 
