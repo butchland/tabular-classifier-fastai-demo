@@ -9,4 +9,4 @@ setup_image_analyzer(app, learn)
 
 if __name__ == '__main__':
     import uvicorn, sys
-    if 'serve' in sys.argv: uvicorn.run(app=app, host=host, port=port)
+    if 'serve' in sys.argv: uvicorn.run(app=app, host=host, port=port, log_level=log_level)

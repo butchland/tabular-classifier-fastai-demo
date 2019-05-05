@@ -5,12 +5,19 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import HTMLResponse
 from pathlib import Path
 
-from config import enable_index_page
+from config import enable_index_page, log_level
+
+debug = False
+if log_level == 'debug':
+    debug = True
 
 path = Path(__file__).parent
 
 def init_app():
     app = Starlette()
+    if debug:
+        app.debug = True
+
     app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_headers=['X-Requested-With', 'Content-Type'])
     if enable_index_page:
         app.mount('/static', StaticFiles(directory='app/static'))
