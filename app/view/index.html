@@ -7,29 +7,148 @@
 <body>
 <div>
     <div class='center'>
-        <div class='title'>Classify Pet (Cat/Dog) Images</div>
+        <div class='title'>Predict Salary (&lt; 50K or &gt; 50K ) By your attributes</div>
         <p>
-            Use images of <strong>pets</strong>, either <strong>cats</strong> or <strong>dogs</strong> and
-            determine their breeds!
+            Use attributes <strong>to predict your salary </strong>, either <strong> less than 50K </strong> or <strong>more than 50K </strong> 
+            
         </p>
         <div class='content'>
-            <div class='no-display'>
-                <input id='file-input'
-                       class='no-display'
-                       type='file'
-                       name='file'
-                       accept='image/*'
-                       onchange='showPicked(this)'>
-            </div>
-            <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
-            <div class='upload-label'>
-                <label id='upload-label'>No file chosen</label>
-            </div>
-            <div>
-                <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-            </div>
+            <div class='form-display'>
+                <div class='form-field' >
+                    <label for='age'>Age</label>
+                    <input id='form-age' type='text' name='age' value='0' maxlength='50' />
+                </div>
+                <div class='form-field' >
+                    <label for='fnlwgt'>Final Weight</label>
+                    <input id='form-fnlwgt' type='text' name='fnlwgt' value='0' maxlength='50' />
+                </div>
+                <div class='form-field' >
+                        <label for='education-num'>Years of Education</label>
+                        <input id='form-education-num' type='text' name='education-num' value='0' maxlength='50' />
+                </div>
+                <div class='form-field' >
+                    <label for='workclass'>Work Class</label>
+                    <select id='form-workclass' name='workclass' value='' >
+                        <option value='Private' >Private</option>
+                        <option value='Self-emp-inc' >Self employed (inc)</option>
+                        <option value='Self-emp-not-inc' >Self employed (not inc)</option>
+                        <option value='State-gov' >State govt</option>
+                        <option value='Federal-gov' >Federal govt</option>
+                        <option value='Local-gov' >Local govt</option>
+                        <option value='?' >Unknown</option>
+                        <option value='Without-pay' >Without pay</option>
+                        <option value='Never-worked' >Never worked</option>
+<!--
+    [' Private', ' Self-emp-inc', ' Self-emp-not-inc', ' State-gov', ' Federal-gov', ' Local-gov', ' ?',
+       ' Without-pay', ' Never-worked']
+-->
+                    </select>
+                </div>
+                <div class='form-field' >
+                    <label for='education'>Education Level</label>
+                    <select id='form-education' name='education' value='' >
+                            <option value='Assoc-acdm' >Associate academic</option>
+                            <option value='Masters' >Masters</option>
+                            <option value='HS-grad' >High School grad</option>
+                            <option value='Prof-school' >Professional school</option>
+                            <option value='7th-8th' >7-8th grade</option>
+                            <option value='Some-college' >Some college</option>
+                            <option value='11th' >11th grade</option>
+                            <option value='Bachelors' >Bachelors</option>
+                            <option value='Assoc-voc' >Associate vocational</option>
+                            <option value='10th' >10th grade</option>
+                            <option value='9th' >9th grade</option>
+                            <option value='Doctorate' >Doctorate</option>
+                            <option value='12th' >12th grade</option>
+                            <option value='1st-4th' >1-4th grade</option>
+                            <option value='5th-6th' >5-6th grade</option>
+                            <option value='Preschool' >Preschool</option>
+                            
+<!--
+[' Assoc-acdm', ' Masters', ' HS-grad', ' Prof-school', ' 7th-8th', ' Some-college', ' 11th', ' Bachelors',
+       ' Assoc-voc', ' 10th', ' 9th', ' Doctorate', ' 12th', ' 1st-4th', ' 5th-6th', ' Preschool']
+-->                        
+                    </select>
+                </div>
+                <div class='form-field' >
+                    <label for='marital-status'>Marital Status</label>
+                    <select id='form-marital-status' name='marital-status' value='' >
+                            <option value='Married-civ-spouse' >Married</option>
+                            <option value='Divorced' >Divorced</option>
+                            <option value='Never-married' >Never married</option>
+                            <option value='Widowed' >Widowed</option>
+                            <option value='Married-spouse-absent' >Married without spouse</option>
+                            <option value='Separated' >Separated</option>
+                            <option value='Married-AF-spouse' >Married AF</option>
+                
+<!--
+' Married-civ-spouse', ' Divorced', ' Never-married', ' Widowed', ' Married-spouse-absent', ' Separated',
+       ' Married-AF-spouse'
+
+-->                        
+                    </select>
+                </div>
+                <div class='form-field' >
+                    <label for='Occupation'>Occupation</label>
+                    <select id='form-occupation' name='occupation' value='' >
+                            <option value=''>N/A</option>
+                            <option value='Exec-managerial'>Executive/Managerial</option>
+                            <option value='Prof-specialty'>Professional (specialty)</option>
+                            <option value='Other-service'>Other services</option>
+                            <option value='Handlers-cleaners'>Handlers/cleaners</option>
+                            <option value='Craft-repair'>Craft repair</option>
+                            <option value='Adm-clerical'>Administrative clerical</option>
+                            <option value='Sales'>Sales</option>
+                            <option value='Machine-op-inspct'>Machine operation/inspection</option>
+                            <option value='Transport-moving'>Transportation/Moving</option>
+                            <option value='?'>Unknown</option>
+                            <option value='Farming-fishing'>Farming/Fishing</option>
+                            <option value='Tech-support'>Tech support</option>
+                            <option value='Protective-serv'>Protective services</option>
+                            <option value='Priv-house-serv'>Private house services</option>
+                            <option value='Armed-Forces'>Armed Forces</option>
+
+<!--
+ [nan, ' Exec-managerial', ' Prof-specialty', ' Other-service', ' Handlers-cleaners', ' Craft-repair',
+       ' Adm-clerical', ' Sales', ' Machine-op-inspct', ' Transport-moving', ' ?', ' Farming-fishing', ' Tech-support',
+       ' Protective-serv', ' Priv-house-serv', ' Armed-Forces']   
+-->
+                    </select>
+                </div>
+                <div class='form-field' >
+                    <label for='relationship'>Relationship</label>
+                    <select id='form-relationship' name='relationship' value='' >
+                            <option value='Wife' >Wife</option>
+                            <option value='Not-in-family' >Not in family</option>
+                            <option value='Unmarried' >Unmarried</option>
+                            <option value='Husband' >Husband</option>
+                            <option value='Own-child' >Own child</option>
+                            <option value='Other-relative' >Other relative</option>
+
+<!--
+    [' Wife', ' Not-in-family', ' Unmarried', ' Husband', ' Own-child', ' Other-relative']    
+
+-->
+                    </select>
+                </div>
+                <div class='form-field' >
+                    <label for='race'>Race</label>
+                    <select id='form-race' name='race' value='' >
+                            <option value='White' >White</option>
+                            <option value='Black' >Black</option>
+                            <option value='Asian-Pac-Islander' >Asian/Pacific islander</option>
+                            <option value='Amer-Indian-Eskimo' >American Indian/Eskimo</option>
+                            <option value='Other' >Other</option>
+
+<!--
+[' White', ' Black', ' Asian-Pac-Islander', ' Amer-Indian-Eskimo', ' Other']
+
+-->
+                    </select>
+                </div>
+            </div>        
             <div class='analyze'>
-                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Predict</button>
             </div>
             <div class='result-label'>
                 <label id='result-label'></label>
