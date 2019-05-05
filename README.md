@@ -2,13 +2,13 @@
 
 This repo can be used as a starting point to deploy [fast.ai](https://github.com/fastai/fastai) models on Render.
 
-The sample app described here is up at https://fastai-v3.onrender.com. Test it out with bear images!
+The sample app described here is up at https://fastai-v3.onrender.com. Test it out with tabular data!
 
 The guide for production deployment to Render is at https://course.fast.ai/deployment_render.html.
 
 ## Refactored Project Template
 
-Heavily modified in order to convert it into a project template for faster deployment of simple image classification projects
+Heavily modified in order to convert it into a project template for faster deployment of simple tabular prediction projects
 
 ## Updated Demo Site
 
