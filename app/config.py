@@ -5,6 +5,11 @@ host = '0.0.0.0'
 # config for logging and debugging
 log_level = 'info'
 
+# allow env var to override log level
+if 'LOG_LEVEL' in os.environ:
+    log_level = os.environ['LOG_LEVEL']
+
+
 # config for image prediction api path and if html index page is available
 # remember to modify prediction_api_path and api_response_key_name in /static/client.js 
 # to match prediction_api_path and api_response_key_name in config
