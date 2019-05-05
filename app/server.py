@@ -11,7 +11,7 @@ logger.setLevel(log_name2level(log_level))
 
 learn = init_learner_in_loop()
 app = init_app()
-setup_image_analyzer(app, learn)
+setup_input_analyzer(app, learn)
 
 if __name__ == '__main__':
     import uvicorn, sys

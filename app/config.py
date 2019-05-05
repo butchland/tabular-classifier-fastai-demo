@@ -1,3 +1,4 @@
+import os
 # defaults for server.py (only used for local server)
 port = 5042
 host = '0.0.0.0'
@@ -36,4 +37,4 @@ if 'REFRESH_MODEL' in os.environ:
 # change this custom.petbreed_prediction_handler into 
 # your own custom prediction handler which can be named anything (modify the import)
 # as long as this config module exports that method as 'handle_prediction'
-from custom.petbreed_prediction_handler import handle_prediction as handle_prediction
+from custom.salary_prediction_handler import handle_prediction as handle_prediction

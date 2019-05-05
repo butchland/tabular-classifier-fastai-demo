@@ -1,5 +1,5 @@
 
-from fastai.vision import load_learner
+from fastai.tabular import load_learner
 from pathlib import Path
 import aiohttp, asyncio
 
