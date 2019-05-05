@@ -1,8 +1,7 @@
 
 from model_setup import init_learner_in_loop
 from app_setup import init_app
-from image_analyzer import setup_image_analyzer
-from config import host,port
+from input_analyzer import setup_input_analyzer
 
 learn = init_learner_in_loop()
 app = init_app()
